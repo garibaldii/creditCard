@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
+  <script src="script/script.js" defer></script>
+</head>
+
+<body>
+
+  <main>
+
+
+    <!--card part-->
+    <aside>
+
+      <section id="front_card" class="card">
+
+        <img src="images/bg-card-front.png" alt="front-card">
+
+        <section id="front_card_text">
+
+          <h1>0000 0000 0000 0000</h1>
+          <section id="inline_data">
+            <h1>Jane Appleseed</h1>
+            <h4>00/00</h4>
+          </section>
+          
+        </section>
+
+      </section>
+
+      <section id="back_card" class="card">
+        <h4>000</h4>
+      </section>
+
+
+    </aside>
+    <!--###-->
+
+
+
+
+
+
+
+
+
+
+
+    <!--form part-->
+
+    <form>
+
+      <label for="user_name">Cardholder Name</label>
+      <input type="text" name="user_name" id="user_name" placeholder="e.g. Jane Appleseed">
+
+      <label for="card_number">Card Number</label>
+      <input type="number" name="card_number" id="card_number" placeholder="e.g. 1234 5678 9123 0000">
+
+
+      <section id="">
+
+
+        <section id="date_section">
+
+          <label for="date">Exp. Date (MM/YY)</label>
+
+          <input type="date" name="month" id="month" placeholder="MM">
+          <input type="date" name="year" id="year" placeholder="YY">
+
+        </section>
+
+        <section id="password_section">
+
+          <label for="CVC">CVC</label>
+          <input type="text" placeholder="e.g. 123">
+
+        </section>
+
+      </section>
+
+      <button>Confirm</button>
+
+    </form>
+
+    <!--###-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- result part -->
+
+
+    <section id="third_part">
+
+      <h1>Thank you!</h1>
+      <p>We've added your card details</p>
+      <button>Continue</button>
+
+    </section>
+
+    <!--###-->
+
+  </main>
+
+
+</body>
+
+</html>

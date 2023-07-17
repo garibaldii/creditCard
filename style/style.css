@@ -1,0 +1,87 @@
+body{
+    height: 100vh;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: hsl(278, 68%, 11%);
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    align-items: center;
+    background-color: white;
+    width: 70%;
+    height: 100%;
+}
+
+aside{
+    width: 70%;
+
+    .card{
+        width: 70%;
+
+    }
+
+    #front_card{
+        position: relative;
+        
+    }
+
+    
+}
+
+img{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+
+#front_card_text{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+#inline_data{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#third_part{
+    display: none;
+}
