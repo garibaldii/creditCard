@@ -1,87 +1,370 @@
-body{
+body {
     height: 100vh;
     font-family: 'Space Grotesk', sans-serif;
-    background-color: hsl(278, 68%, 11%);
+    background-image: url(../images/bg-main-desktop.png);
+    margin: 0;
 }
 
-main{
+main {
     display: flex;
     flex-direction: row;
     margin-left: auto;
     align-items: center;
-    background-color: white;
-    width: 70%;
+    background-color: hsl(0, 0%, 100%);
+    width: 65%;
     height: 100%;
 }
 
-aside{
-    width: 70%;
 
-    .card{
-        width: 70%;
+
+
+/*card part*/
+
+aside {
+    width: 60%;
+    height: 100%;
+
+    .card {
+        width: 100%;
+
 
     }
 
-    #front_card{
+
+    /*front card */
+
+    #front_card {
         position: relative;
-        
+        right: 80%;
+        top: 10%;
+
+
+        #front_card_text {
+            position: absolute;
+            line-height: 1px;
+            top: 85%;
+            left: 50%;
+            width: 95%;
+            color: white;
+            transform: translate(-50%, -50%);
+            font: 100;
+            font-size: 1.5vw;
+            font-weight: 300;
+
+            #card_logo {
+                position: absolute;
+                bottom: 230%;
+            }
+
+            #card_number_result {
+                position: absolute;
+                bottom: 60%;
+                letter-spacing: 3px;
+                font-weight: 300;
+            }
+
+            .front_card_data {
+                font-weight: 300;
+            }
+        }
     }
 
-    
+    /*###*/
+
+
+
+
+    /*back card*/
+
+    #back_card {
+        position: relative;
+        right: 50%;
+        top: 13%;
+
+
+        #back_card_text {
+            position: absolute;
+            line-height: 1px;
+            top: 38%;
+            left: 127%;
+            width: 95%;
+            color: white;
+            transform: translate(-50%, -50%);
+            font: 100;
+
+
+            #CVC_code {
+                position: absolute;
+                font-weight: 300;
+
+            }
+        }
+    }
+
+    /*###*/
 }
 
-img{
+/*###*/
+
+
+
+#container {
     display: flex;
     position: relative;
+    height: 100%;
+    width: fit-content;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    color: hsl(278, 68%, 11%);
+    width: 65%;
+
+    #form_header {
+        display: flex;
+        flex-direction: column;
+
+        #card_number_error {
+            height: 10px;
+            width: fit-content;
+        }
+
+
+        #card_number {
+            margin-bottom: 0%;
+        }
+
+    }
+
+
+
+
+    #form_body {
+        display: flex;
+        /*display grid
+        temlate 1fr*/
+
+        #date_section {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+
+            #input_date {
+                display: flex;
+
+
+                #month {
+                    width: 50%;
+                    margin-right: 5%;
+                }
+
+                #year {
+                    width: 50%;
+                }
+
+                #month_error {
+                    height: 10px;
+                    width: fit-content;
+                }
+
+                #year_error {
+                    height: 10px;
+                    width: fit-content;
+                }
+            }
+        }
+
+        #password_section {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            height: fit-content;
+
+
+            #CVC_error {
+                height: 10px;
+                width: 20px;
+            }
+        }
+    }
+
+    .form_input {
+        margin-bottom: 6%;
+    }
+
+
+
+    .error {
+        margin: 0;
+        color: hsl(0, 100%, 66%);
+        margin-bottom: 6%;
+        font-size: 12px;
+        border-color: hsl(0, 100%, 66%);
+    }
+
+    #confirm_btn {
+        height: 45px;
+        background-color: hsl(278, 68%, 11%);
+        color: white;
+        border-radius: 5px;
+        border: solid 0px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 15px;
+        cursor: pointer;
+        margin-top: 10%;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+label {
+    margin-bottom: 2%;
+    font-size: 13px;
+}
+
+input {
+
+    border-radius: 5px;
+    padding: 12px;
+    border: 1px solid hsl(270, 3%, 87%);
+    font-family: 'Space Grotesk', sans-serif;
+    outline: none;
+}
+
+input:focus {
+    border: 1px solid hsl(278, 94%, 30%);
+}
+
+input::placeholder {
+    font-size: 16px;
+    color: hsl(270, 3%, 87%);
+}
+
+
+img {
     width: 100%;
     height: auto;
 }
 
-
-#front_card_text{
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
-}
-#inline_data{
+#inline_data {
     display: flex;
     justify-content: space-between;
+
+    #month_year {
+        display: flex;
+    }
 }
 
 
 
+#third_part {
+    display: flex;
+    position: absolute;
+    left: 65%;
+    visibility: hidden;
+    flex-direction: column;
+    align-items: center;
+    color: hsl(278, 68%, 11%);
+    width: fit-content;
+
+
+
+    #third_part_header {
+        font-weight: 400;
+        font-size: 2vw;
+    }
+
+    #third_part_paragraph {
+        color: hsl(279, 6%, 55%);
+        margin-top: 0%;
+        margin-bottom: 20%;
+
+    }
+
+    #third_part_btn {
+        width: 130%;
+        height: 40px;
+        border-radius: 5px;
+        border: 0px solid;
+        color: white;
+        font-size: 15px;
+        background-color: hsl(278, 68%, 11%);
+        cursor: pointer;
+    }
+}
+
+
+@media(max-width:950px) {
+
+    body {
+        background-image: none;
+    }
+
+    main {
+        flex-direction: column;
+        width: 100%;
+
+
+        #container {
+            width: 100%;
+            justify-content: center;
+
+            form{
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        #third_part{
+            display: none;
+        }
+    }
+
+    aside {
+        display: flex;
+        width: auto;
+        height: auto;
+
+
+
+
+        /* #back_card{
+            position: relative;
+            right: 50%;
+            top: 13%; */
+
+        #back_card {
+            
+            right: 100px;
+            top: 100px;
+        }
+
+        #front_card {
+            right: 0px;
+            left: 80px;
+            top: 200px;
+        }
+
+        /* #front_card{
+            position: relative;
+            right: 80%;
+            top: 10%; */
+
+    }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#third_part{
-    display: none;
 }

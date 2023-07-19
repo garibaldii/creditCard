@@ -8,18 +8,20 @@
   <title>Frontend Mentor | Interactive card details form</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style/style.css">
   <script src="script/script.js" defer></script>
 </head>
 
 <body>
 
-  <main>
+  <main id="main">
 
 
     <!--card part-->
-    <aside>
+    <aside id="aside">
 
       <section id="front_card" class="card">
 
@@ -27,18 +29,35 @@
 
         <section id="front_card_text">
 
-          <h1>0000 0000 0000 0000</h1>
+          <svg id="card_logo" width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff" />
+            <path
+              d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z"
+              stroke="#fff" />
+          </svg>
+
+          <h1 id="card_number_result">0000 0000 0000 0000</h1>
           <section id="inline_data">
-            <h1>Jane Appleseed</h1>
-            <h4>00/00</h4>
+            <h1 class="front_card_data" id="name_front_card">Jane Appleseed</h1>
+            <section id="month_year">
+              <h4 class="front_card_data" id="month_card">00</h4>
+              <h4>/</h4>
+              <h4 class="front_card_data" id="year_card">00</h4>
+            </section>
           </section>
-          
+
         </section>
 
       </section>
 
       <section id="back_card" class="card">
-        <h4>000</h4>
+
+        <img src="images/bg-card-back.png" alt="back_card">
+
+        <section id="back_card_text">
+          <h4 id="CVC_code">000</h4>
+        </section>
+
       </section>
 
 
@@ -57,39 +76,71 @@
 
     <!--form part-->
 
-    <form>
+    <div id="container">
 
-      <label for="user_name">Cardholder Name</label>
-      <input type="text" name="user_name" id="user_name" placeholder="e.g. Jane Appleseed">
+      <form id="formulary">
 
-      <label for="card_number">Card Number</label>
-      <input type="number" name="card_number" id="card_number" placeholder="e.g. 1234 5678 9123 0000">
+        <section id="form_header">
 
+          <label for="user_name">CARDHOLDER NAME</label>
+          <input type="text" name="user_name" id="user_name" placeholder="e.g. Jane Appleseed" class="form_input"
+            required>
 
-      <section id="">
+          <label for="card_number">CARD NUMBER</label>
+          <input type="text" name="card_number" id="card_number" placeholder="e.g. 1234 5678 9123 0000"
+            class="form_input" required>
 
+          <p id="card_number_error" class="error"></p>
 
-        <section id="date_section">
-
-          <label for="date">Exp. Date (MM/YY)</label>
-
-          <input type="date" name="month" id="month" placeholder="MM">
-          <input type="date" name="year" id="year" placeholder="YY">
 
         </section>
 
-        <section id="password_section">
+        <!--same line-->
+        <section id="form_body">
 
-          <label for="CVC">CVC</label>
-          <input type="text" placeholder="e.g. 123">
+
+          <section id="date_section">
+
+            <label for="date">EXP. DATE (MM/YY)</label>
+
+
+            <!--input date-->
+
+            <section id="input_date">
+
+              <section class="colunm_error">
+
+                <input type="text" name="date" id="month" placeholder="MM" class="form_input_same_line" required
+                  maxlength="2">
+                <p id="month_error" class="error"></p>
+
+              </section>
+
+              <section class="colunm_error">
+                <input type="text" name="date" id="year" placeholder="YY" class="form_input_same_line" required
+                  maxlength="2">
+                <p id="year_error" class="error"></p>
+              </section>
+
+            </section>
+
+            <!--###-->
+          </section>
+
+          <section id="password_section">
+
+            <label for="CVC">CVC</label>
+            <input type="text" name="CVC" placeholder="e.g. 123" class="form_input_same_line" maxlength="3" id="CVC">
+            <p id="CVC_error" class="error"></p>
+
+          </section>
 
         </section>
 
-      </section>
+        <button id="confirm_btn">Confirm</button>
 
-      <button>Confirm</button>
-
-    </form>
+      </form>
+    </div>
 
     <!--###-->
 
@@ -110,10 +161,19 @@
 
 
     <section id="third_part">
-
-      <h1>Thank you!</h1>
-      <p>We've added your card details</p>
-      <button>Continue</button>
+      <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="40" fill="url(#a)" />
+        <path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3" />
+        <defs>
+          <linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#6348FE" />
+            <stop offset="1" stop-color="#610595" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <h1 id="third_part_header">THANK YOU!</h1>
+      <p id="third_part_paragraph">We've added your card details</p>
+      <button id="third_part_btn" onclick="main_1()">Continue</button>
 
     </section>
 
